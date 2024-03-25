@@ -18,8 +18,18 @@ const CountriesContainer = () => {
 
     const handleCountries = (country) => {
         setVisitedCountries([...visitedCountries, country]);
-     
+        
+        const countryIndex = countries.indexOf(country);
+        setCountries(countries.toSpliced(countryIndex, 1));
     }
+
+    const removeCountry = (country) => {
+        setCountries([...countries, country]);
+
+        const countryIndex = visitedCountries.indexOf(country);
+        setVisitedCountries(visitedCountries.toSpliced(countryIndex, 1));
+    }
+
 
     return ( 
         <>

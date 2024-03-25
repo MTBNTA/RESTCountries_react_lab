@@ -4,7 +4,7 @@ import CountriesContainer from './containers/CountriesContainer';
 function App() {
   return (
     <div className="App">
-      <h1>Country Bucket List</h1>
+      <h1>Countries Bucket List</h1>
       <CountriesContainer />
     </div>
   );
