@@ -1,19 +1,19 @@
 import { useState } from "react";
 
-const Country = ({country}) => {
+const Country = ({country, handleCountries}) => {
 
-    const [countryName, setCountryName] = useState("");
-    const [isChecked, setIsChecked] = useState([]);
+    const handleClick = (event) => {
+        handleCountries(country)
+
+    }
 
     return ( 
         <ul>
             {country.name.common}
-            <input
-            type="checkbox"
-            name="checkbox"
-            value={countryName}
-            onChange={(event) => setIsChecked(event.target.value)}
-            />
+            {country.flag}
+            <button
+            onClick={handleClick}
+            >Visit! </button>
         </ul>
      );
 }

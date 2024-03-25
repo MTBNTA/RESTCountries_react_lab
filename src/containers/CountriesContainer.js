@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import CountriesList from "../components/CountriesList";
-import VisitedCountries from "../components/VisitedCountries";
 
 const CountriesContainer = () => {
 
     const [countries, setCountries] = useState([]);
+    const [visitedCountries, setVisitedCountries] = useState([]);
 
     const fetchCountries = async () => {
         const response = await fetch("https://restcountries.com/v3.1/all");
@@ -16,10 +16,15 @@ const CountriesContainer = () => {
         fetchCountries();
     }, []);
 
+    const handleCountries = (country) => {
+        setVisitedCountries([...visitedCountries, country]);
+     
+    }
+
     return ( 
         <>
-            <CountriesList countries={countries} />
-            <VisitedCountries countries={countries}/>
+            <CountriesList countries={countries} handleCountries={handleCountries} />
+            <CountriesList countries={visitedCountries} />
         </>
      );
 }

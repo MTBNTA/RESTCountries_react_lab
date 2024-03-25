@@ -1,23 +1,19 @@
 import Country from "./Country";
 
-const CountriesList = ({countries}) => {
+const CountriesList = ({countries, handleCountries}) => {
 
     const mappedCountries = countries.map((country, index) => {
-        return <Country country={country} key={index}/>
+        return <Country country={country} key={index} handleCountries={handleCountries} />
     });
 
-    // console.log(mappedCountries);
-
-    const handleCheckbox = (event) => {
-        event.preventDefault();
-
-        // code here
-    }
+   // const mappedVisitedCountries = visitedCountries.
 
     return ( 
         <div>
             <h2>Countries I want to visit:</h2>
             {mappedCountries}
+
+            <h2>Visited Countries:</h2>
         </div>
      );
 }
