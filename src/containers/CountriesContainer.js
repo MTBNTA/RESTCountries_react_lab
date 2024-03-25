@@ -23,14 +23,6 @@ const CountriesContainer = () => {
         setCountries(countries.toSpliced(countryIndex, 1));
     }
 
-    const removeCountry = (country) => {
-        setCountries([...countries, country]);
-
-        const countryIndex = visitedCountries.indexOf(country);
-        setVisitedCountries(visitedCountries.toSpliced(countryIndex, 1));
-    }
-
-
     return ( 
         <>
             <CountriesList countries={countries} handleCountries={handleCountries} />
