@@ -6,12 +6,19 @@ const CountriesList = ({countries}) => {
         return <Country country={country} key={index}/>
     });
 
-    console.log(mappedCountries);
+    // console.log(mappedCountries);
+
+    const handleCheckbox = (event) => {
+        event.preventDefault();
+
+        // code here
+    }
 
     return ( 
-        <>
+        <div>
+            <h2>Countries I want to visit:</h2>
             {mappedCountries}
-        </>
+        </div>
      );
 }
  

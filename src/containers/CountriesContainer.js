@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import CountriesList from "../components/CountriesList";
+import VisitedCountries from "../components/VisitedCountries";
 
 const CountriesContainer = () => {
 
@@ -18,6 +19,7 @@ const CountriesContainer = () => {
     return ( 
         <>
             <CountriesList countries={countries} />
+            <VisitedCountries countries={countries}/>
         </>
      );
 }
