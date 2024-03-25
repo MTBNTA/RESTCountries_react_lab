@@ -6,14 +6,10 @@ const CountriesList = ({countries, handleCountries}) => {
         return <Country country={country} key={index} handleCountries={handleCountries} />
     });
 
-   // const mappedVisitedCountries = visitedCountries.
-
     return ( 
         <div>
-            <h2>Countries I want to visit:</h2>
+            <h2>Countries of the World!</h2>
             {mappedCountries}
-
-            <h2>Visited Countries:</h2>
         </div>
      );
 }
