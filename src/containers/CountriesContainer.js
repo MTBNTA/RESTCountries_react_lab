@@ -19,13 +19,18 @@ const CountriesContainer = () => {
     const handleCountries = (country) => {
         setVisitedCountries([...visitedCountries, country]);
         
+        // find country in countries list
         const countryIndex = countries.indexOf(country);
+        // remove that country from countries list
         setCountries(countries.toSpliced(countryIndex, 1));
     }
 
     return ( 
         <>
+            <h2>Countries of the world!</h2>
             <CountriesList countries={countries} handleCountries={handleCountries} />
+            {/* countries ? <CountryList countries={countries} /> : <p>Loading...</p> */}
+            <h2>Visited Countries:</h2>
             <CountriesList countries={visitedCountries} />
         </>
      );
